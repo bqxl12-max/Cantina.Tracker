@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Cantina Tracker</title>
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    background-color: #f2f2f2;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#resultado {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🍔 Cantina Tracker</h1>
+    
+    <h3>Elegí tu menú:</h3>
+    
+    <button onclick="verEstado('rapido')">Hamburguesa 🍔</button>
+    <button onclick="verEstado('medio')">Milanesa 🍗</button>
+    <button onclick="verEstado('lento')">Pasta 🍝</button>
+
+    <div id="resultado"></div>
+</div>
+
+<script>
+function verEstado(tipo) {
+    let resultado = document.getElementById("resultado");
+
+    if (tipo === "rapido") {
+        resultado.innerHTML = "🟢 Poca gente. Recomendamos ir a la cantina.";
+        resultado.style.color = "green";
+    } 
+    else if (tipo === "medio") {
+        resultado.innerHTML = "🟡 Hay bastante gente. Ir con tiempo.";
+        resultado.style.color = "orange";
+    } 
+    else {
+        resultado.innerHTML = "🔴 Mucha gente. No recomendamos ir ahora.";
+        resultado.style.color = "red";
+    }
+}
+</script>
+
+</body>
+</html>
